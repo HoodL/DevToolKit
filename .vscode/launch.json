@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "DevToolkit Debug",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/dev-toolkit",
+      "runtimeExecutable": "${workspaceFolder}/dev-toolkit/node_modules/.bin/electron-vite",
+      "runtimeArgs": ["--sourcemap"],
+      "env": {
+        "ELECTRON_RUN_AS_NODE": "",
+        "REMOTE_DEBUGGING_PORT": "9222"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "DevToolkit Debug (Build First)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/dev-toolkit",
+      "runtimeExecutable": "${workspaceFolder}/dev-toolkit/node_modules/electron/electron.exe",
+      "runtimeArgs": ["--remote-debugging-port=9222", "."],
+      "env": {
+        "ELECTRON_RUN_AS_NODE": "",
+        "NODE_ENV": "development"
+      },
+      "preLaunchTask": "build",
+      "console": "integratedTerminal"
+    }
+  ]
+}

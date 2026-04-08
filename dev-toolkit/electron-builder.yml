@@ -1,0 +1,23 @@
+appId: com.dev-toolkit
+productName: DevToolkit
+directories:
+  buildResources: resources
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.*'
+  - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+win:
+  executableName: DevToolkit
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: DevToolkit
+  uninstallDisplayName: DevToolkit
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
